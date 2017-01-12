@@ -15,3 +15,4 @@ Research questions
 ## Reading List
 - [Storage Solutions for Docker CaaS](https://success.docker.com/Datacenter/Apply/An_Introduction_to_Storage_Solutions_for_Docker_CaaS)
 - [Continuous Integration with Docker Trusted Registry](https://success.docker.com/Datacenter/Apply/Continuous_Integration_with_Docker_Trusted_Registry)
+- [Building a 12 Factor app with Docker](https://github.com/docker/labs)
