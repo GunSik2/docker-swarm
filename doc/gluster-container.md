@@ -52,3 +52,4 @@ $ docker exec -ti d273cc739c9d
 ## Reference
 - https://github.com/gluster/gluster-containers
 - http://www.slideshare.net/HumbleChirammal/gluster-containers
+- http://www.humblec.com/building-glusterfs-in-a-docker-container/
