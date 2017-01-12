@@ -36,8 +36,8 @@ export OS_SECURITY_GROUPS=docker                          #nova secgroup-list
 ```
 
 - Provision nodes
-  - -zone: optional
-  - --openstack-floatingip-pool: PN_PUB  #nova floating-ip-pool-list
+  - --openstack-availability-zone: OpenStack availability zone 
+  - --openstack-floatingip-pool: OpenStack floating IP pool to get an IP from to assign to the instance (#nova floating-ip-pool-list)
 ```
 . dmachine.env
 
