@@ -65,6 +65,10 @@ docker-machine ssh node1; sudo usermod -aG docker $USER
 docker-machine ssh node2; sudo usermod -aG docker $USER
 docker-machine ssh node3; sudo usermod -aG docker $USER
 ```
+### Deleting nodes
+```
+docker-machine rm -f node-1 node-2 node-3
+```
 
 ## Docker-machine options
 ### Docker-machine openstack options
