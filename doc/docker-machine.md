@@ -4,6 +4,18 @@ Docker machine deployment
 ## Objective 
 How to deploy and manage three nodes(virtual machine) using docker machine?
 
+## Concept
+Docker Machine is a tool for provisioning and managing your Dockerized hosts (hosts with Docker Engine on them).
+Docker (or Docker Engine) is the client-server application made up of the Docker daemon, a REST API that specifies interfaces for interacting with the daemon, and a command line interface (CLI) client that talks to the daemon (through the REST API wrapper).
+
+- Docker Engine
+
+![Docker Engine](https://docs.docker.com/machine/img/engine.png)
+
+- Docker Machine
+
+![Docker Machine](https://docs.docker.com/machine/img/machine.png)
+
 ## Provisioning three nodes
 Assume to deploy on openstack.
 
@@ -164,5 +176,6 @@ Commands:
   help                  Shows a list of commands or help for one command
 ````
 
-
+## Reference
+- https://docs.docker.com/machine/
 
