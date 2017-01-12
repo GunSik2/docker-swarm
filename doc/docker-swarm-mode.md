@@ -149,4 +149,3 @@ backend http_back
 
 ## Reference
 - https://docs.docker.com/engine/swarm/
-- http://proxy.dockerflow.com/swarm-mode-auto/
