@@ -16,3 +16,4 @@ Research questions
 - [Storage Solutions for Docker CaaS](https://success.docker.com/Datacenter/Apply/An_Introduction_to_Storage_Solutions_for_Docker_CaaS)
 - [Continuous Integration with Docker Trusted Registry](https://success.docker.com/Datacenter/Apply/Continuous_Integration_with_Docker_Trusted_Registry)
 - [Building a 12 Factor app with Docker](https://github.com/docker/labs)
+- [How To Set Up And Deploy To A 1000-Node Docker Swarm](https://blog.nimbleci.com/2016/08/17/how-to-set-up-and-deploy-to-a-1000-node-docker-swarm/)
