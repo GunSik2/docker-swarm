@@ -68,10 +68,25 @@ Address 2: 10.0.9.10 my-dnsrr-service.3.0sb1jxr99bywbvzac8xyw73b1.my-network
 Address 3: 10.0.9.9 my-dnsrr-service.2.am6fx47p3bropyy2dy4f8hofb.my-network
 ```
 
-## Advanced configuration case 
+## Advanced configuration case
+- Using HTTP Routing Mesh
+  - Traffic comes in through the swarm mode routing mesh on the ingress network to the HRM service's published port.
+  - As services are created, they are assigned a VIP on the swarm mode routing mesh (L4).
+  - The HRM receives the TCP packet and inspects the HTTP header.
+    - Services that contain the label com.docker.ucp.mesh.http are checked if they match the HTTP Host: header.
+    - If a Host: header and service label label match, then traffic is routed to the service's VIP using the swarm mode routing mesh (L4).
+  - If a service contains multiple replicas, then each replica container will be load balanced via round-robin using the internal L4 routing mesh.
+  
+![](https://success.docker.com/@api/deki/files/294/hrm-up-close.png?revision=2)
+
+
+- Using proxy docker flow
+
 ![](https://leanpub.com/site_images/the-devops-2-1-toolkit/ch03----swarm-nodes-proxy-scaled.png)
+
 
 ## Reference
 - https://docs.docker.com/engine/swarm/networking/
 - http://proxy.dockerflow.com/swarm-mode-auto/
 - https://leanpub.com/the-devops-2-1-toolkit/read
+- https://success.docker.com/Datacenter/Apply/Docker_Reference_Architecture%3A_Universal_Control_Plane_2.0_Service_Discovery_and_Load_Balancing
