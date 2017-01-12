@@ -67,5 +67,11 @@ Address 1: 10.0.9.8 my-dnsrr-service.1.bd3a67p61by5dfdkyk7kog7pr.my-network
 Address 2: 10.0.9.10 my-dnsrr-service.3.0sb1jxr99bywbvzac8xyw73b1.my-network
 Address 3: 10.0.9.9 my-dnsrr-service.2.am6fx47p3bropyy2dy4f8hofb.my-network
 ```
+
+## Advanced configuration case 
+![](https://leanpub.com/site_images/the-devops-2-1-toolkit/ch03----swarm-nodes-proxy-scaled.png)
+
 ## Reference
 - https://docs.docker.com/engine/swarm/networking/
+- http://proxy.dockerflow.com/swarm-mode-auto/
+- https://leanpub.com/the-devops-2-1-toolkit/read
