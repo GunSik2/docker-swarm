@@ -17,3 +17,4 @@ Research questions
 - [Continuous Integration with Docker Trusted Registry](https://success.docker.com/Datacenter/Apply/Continuous_Integration_with_Docker_Trusted_Registry)
 - [Building a 12 Factor app with Docker](https://github.com/docker/labs)
 - [How To Set Up And Deploy To A 1000-Node Docker Swarm](https://blog.nimbleci.com/2016/08/17/how-to-set-up-and-deploy-to-a-1000-node-docker-swarm/)
+- [MicroServices From Development To Production Using Docker, Docker Compose & Docker Swarm](https://medium.com/@eon01/microservices-from-development-to-production-using-docker-docker-compose-docker-swarm-3cf37f97706b#.3exu8a2t9)
