@@ -147,5 +147,14 @@ backend http_back
 
 ![Ingress network](https://docs.docker.com/engine/swarm/images/ingress-lb.png)
 
+- Internal flow of routing mesh
+
+![](https://success.docker.com/@api/deki/files/201/routing-mesh.png?revision=5)
+  - A service is created with two replicas, and it is port mapped externally to port 8000.
+  - The routing mesh exposes port 8000 on each host in the cluster.
+  - Traffic destined for the app can enter on any host. In this case the external LB sends the traffic to a host without a service replica.
+  - The kernel's IPVS load balancer redirects traffic on the ingress overlay network to a healthy service replica.
+
 ## Reference
 - https://docs.docker.com/engine/swarm/
+- https://success.docker.com/Datacenter/Apply/Docker_Reference_Architecture%3A_Designing_Scalable,_Portable_Docker_Container_Networks
