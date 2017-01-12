@@ -101,7 +101,7 @@ Status:
  State:			Ready
  Availability:		Active
 ```
-### routing mesh
+### Manage service routing using routing mesh
  The routing mesh enables each node in the swarm to accept connections on published ports for any service running in the swarm, even if there’s no task running on the node. 
  The routing mesh routes all incoming requests to published ports on available nodes to an active container.
  In order to use the ingress network in the swarm, you need to have the following ports open between the swarm nodes before you enable swarm mode:
