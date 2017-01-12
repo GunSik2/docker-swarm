@@ -69,4 +69,3 @@ Address 3: 10.0.9.9 my-dnsrr-service.2.am6fx47p3bropyy2dy4f8hofb.my-network
 ```
 ## Reference
 - https://docs.docker.com/engine/swarm/networking/
-- http://proxy.dockerflow.com/swarm-mode-auto/
