@@ -68,25 +68,27 @@ gluster volume start vol
 
 
 
-## Clustering
+## Clustering - TBU
 ### Run the second gluster
 - Create a new gluster node by following the previous steps
 - configure cluster on both nodes
+- update hosts file
 ```
 vi /etc/hosts
 10.128.0.3 gluster1
 10.128.0.4 gluster2
-
+```
+- Add cluster peer
+```
 gluster peer probe gluster1
 gluster peer probe gluster2
 gluster peer status
 ```
 
 ### Start volume
-- mount
+- mount: check options cluster, stripe, etc.
 ```
-sudo mkdir -p /mnt/gluster
-gluster  volume create datapoint replica 2 transport tcp
+gluster volume create vol gluster1:/data/glusterfs gluster2:/data/glusterfs force
 ```
 - start volume
 ```
