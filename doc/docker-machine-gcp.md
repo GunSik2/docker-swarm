@@ -25,6 +25,14 @@ $ docker-machine create --driver google --google-project linkideareal --google-m
 $ docker-machine create --driver google --google-project linkideareal --google-machine-type n1-standard-1 node02
 $ docker-machine create --driver google --google-project linkideareal --google-machine-type n1-standard-1 node03  
 ```
+- Enable to run docker command without sudo. relogin required.
+```
+docker-machine ssh node01; sudo usermod -aG docker $USER; logout
+docker-machine ssh node01; docker ps -a
+
+docker-machine ssh node02; sudo usermod -aG docker $USER
+docker-machine ssh node03; sudo usermod -aG docker $USER
+```
 
 ## gcloud cmds
 - image list
