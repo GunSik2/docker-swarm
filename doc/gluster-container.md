@@ -25,15 +25,15 @@ $ docker build -t gluster-centos docker/CentOS/Dockerfile
    - `/var/log/glusterfs`    : To make gluster logs persistent in the host.
    - `/etc/glusterfs`        : To make gluster configuration persistent in the host.
 ```
-$ mkdir -p /etc/glusterfs /var/lib/glusterd /var/log/glusterfs
+$ mkdir -p /etc/glusterfs /var/lib/glusterd /var/log/glusterfs /data/glusterfs /data/glusterfs
 $ docker run --name gluster -d \
     --privileged=true --net=host \
     -v /etc/glusterfs:/etc/glusterfs:z \
     -v /var/lib/glusterd:/var/lib/glusterd:z \
     -v /var/log/glusterfs:/var/log/glusterfs:z \
     -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
+    -v /data/glusterfs:/data/glusterfs \
     -v /dev/:/dev gluster/gluster-centos
-
 ```
 
 ### Verify running
@@ -46,18 +46,36 @@ $ docker inspect gluster
 - get inside the container
 ```
 $ docker exec -ti gluster /bin/bash
-# ps aux |grep glusterd
+# ps aux | grep glusterd
 # gluster peer status
 # gluster --version
 ```
 
+### Start volume
+- configure hosts
+```
+vi /etc/hosts
+10.128.0.3 gluster1
+```
+- You must use the volume specified on running the docker
+```
+gluster volume create vol gluster1:/data/glusterfs force
+```
+- start volume
+```
+gluster volume start vol
+```
+
+
+
+## Clustering
 ### Run the second gluster
 - Create a new gluster node by following the previous steps
 - configure cluster on both nodes
 ```
 vi /etc/hosts
-192.168.0.100	server1.example.com	gluster1
-192.168.0.101	server2.example.com	gluster2
+10.128.0.3 gluster1
+10.128.0.4 gluster2
 
 gluster peer probe gluster1
 gluster peer probe gluster2
@@ -83,3 +101,5 @@ gluster volume info
 - https://github.com/gluster/gluster-containers
 - http://www.slideshare.net/HumbleChirammal/gluster-containers
 - http://www.humblec.com/building-glusterfs-in-a-docker-container/
+- https://gluster.readthedocs.io/en/latest/Administrator%20Guide/Setting%20Up%20Volumes/
+- http://blog.syszone.co.kr/3038
