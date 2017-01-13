@@ -17,9 +17,14 @@ sudo apt-get -y install glusterfs-client
 ```
 - Run daemon
 ```
-sudo convoy daemon --drivers devicemapper \
-  --driver-opts glusterfs.servers=10.1.1.2,10.1.1.3,10.1.1.4 \
-  --driver-opts glusterfs.defaultvolumepool=docker-volume
+sudo convoy daemon --drivers glusterfs --driver-opts glusterfs.servers=10.128.0.3 --driver-opts glusterfs.defaultvolumepool=vol
+
+ERRO[0000] Failed to execute: mount [-t glusterfs 10.128.0.3:/vol /var/lib/rancher/convoy/glusterfs/mounts/vol], output Mount failed. Please check the log file for more details.
+, error exit status 1
+{
+        "Error": "Failed to execute: mount [-t glusterfs 10.128.0.3:/vol /var/lib/rancher/convoy/glusterfs/mounts/vol], output Mount failed. Please check the log file for more details.\n, error exit status 1"
+}
+
 ```
 
 
