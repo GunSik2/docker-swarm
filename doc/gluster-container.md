@@ -51,6 +51,34 @@ $ docker exec -ti gluster /bin/bash
 # gluster --version
 ```
 
+### Run the second gluster
+- Create a new gluster node by following the previous steps
+- configure cluster on both nodes
+```
+vi /etc/hosts
+192.168.0.100	server1.example.com	gluster1
+192.168.0.101	server2.example.com	gluster2
+
+gluster peer probe gluster1
+gluster peer probe gluster2
+gluster peer status
+```
+
+### Start volume
+- mount
+```
+sudo mkdir -p /mnt/gluster
+gluster  volume create datapoint replica 2 transport tcp
+```
+- start volume
+```
+gluster volume start datapoint
+```
+- view volume
+```
+gluster volume info
+```
+
 ## Reference
 - https://github.com/gluster/gluster-containers
 - http://www.slideshare.net/HumbleChirammal/gluster-containers
