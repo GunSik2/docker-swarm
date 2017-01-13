@@ -30,3 +30,4 @@ ERRO[0000] Failed to execute: mount [-t glusterfs 10.128.0.3:/vol /var/lib/ranch
 
 Reference
 - https://github.com/rancher/convoy/blob/master/docs/glusterfs.md
+- https://gluster.readthedocs.io/en/latest/Install-Guide/Quick_start/
