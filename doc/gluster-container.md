@@ -31,19 +31,21 @@ $ docker run --name gluster -d \
     -v /etc/glusterfs:/etc/glusterfs:z \
     -v /var/lib/glusterd:/var/lib/glusterd:z \
     -v /var/log/glusterfs:/var/log/glusterfs:z \
-    -v /sys/fs/group:/sys/fs/cgroup:ro \
+    -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
     -v /dev/:/dev gluster/gluster-centos
+
 ```
 
 ### Verify running
 - inspect the container
 ```
 $ docker ps -a
-$ docker inspect d273cc739c9d
+$ docker inspect gluster
 ```
+
 - get inside the container
 ```
-$ docker exec -ti d273cc739c9d
+$ docker exec -ti gluster /bin/bash
 # ps aux |grep glusterd
 # gluster peer status
 # gluster --version
