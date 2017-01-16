@@ -30,7 +30,7 @@ The three nodes are named node1, node2, node3.
   - The other nodes in the swarm must be able to access the manager at the IP address.
 ```
 docker-machine ssh node1
-docker swarm init --advertise-addr 10.101.0.255
+docker swarm init --advertise-addr 10.128.0.3
 ```
 - View the current state of the swarm
 ```
@@ -46,10 +46,10 @@ docker swarm join-token worker
 - Run the command produced 
 ```
 docker-machine ssh node2 
-docker swarm join --token SWMTKN-1-59blm3t66ip3hgy7lvhjkh4c3kmrhyuzepqlvooyp4jqfvdxgf-bpht19gdj1k4f9ozegwowf87e 10.101.0.255:2377
+docker swarm join --token SWMTKN-1-59blm3t66ip3hgy7lvhjkh4c3kmrhyuzepqlvooyp4jqfvdxgf-bpht19gdj1k4f9ozegwowf87e 10.128.0.3:2377
 
 docker-machine ssh node3 
-docker swarm join --token SWMTKN-1-59blm3t66ip3hgy7lvhjkh4c3kmrhyuzepqlvooyp4jqfvdxgf-bpht19gdj1k4f9ozegwowf87e 10.101.0.255:2377
+docker swarm join --token SWMTKN-1-59blm3t66ip3hgy7lvhjkh4c3kmrhyuzepqlvooyp4jqfvdxgf-bpht19gdj1k4f9ozegwowf87e 10.128.0.3:2377
 ```
 - View the current state of the swarm
 ```
