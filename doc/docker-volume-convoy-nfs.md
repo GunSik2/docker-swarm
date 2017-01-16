@@ -40,6 +40,41 @@ sudo docker run -v vol1:/vol1 --volume-driver=convoy ubuntu touch /vol1/foo
 sudo ls nfs/vol1/foo
 ```
 
+## Volume handling
+- delete a volume with convoy
+```
+sudo convoy delete vol1  
+```
+- delete a volume with docker
+```
+sudo docker rm -v <container_name>
+```
+- list and inspect a volume
+```
+sudo convoy list
+sudo convoy inspect vol1
+```
+- take snapshot
+```
+sudo convoy snapshot create vol1 --name snap1vol1
+```
+- delete a snapshot
+```
+sudo convoy snapshot delete snap1vol1
+```
+- backup a snapshot
+```
+sudo convoy backup create snap1vol1 --dest s3://backup-bucket@us-west-2/
+sudo convoy backup create snap1vol1 --dest vfs:///opt/backup/
+```
+- restore a snapshot
+```
+sudo convoy create res1 --backup <url>
+```
+- Mount a Restored Volume into a Docker Container
+```
+sudo docker run -it -v res1:/res1 --volume-driver convoy ubuntu
+```
 
 ## Structure
 
