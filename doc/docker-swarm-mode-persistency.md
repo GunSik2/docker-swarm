@@ -44,20 +44,21 @@ docker service rm postgres
 - Test postgres again
   - Check that the created tables are not persisted.
   
-## Postgres with persistency
-- Run postgres service (node1-master)
+## Postgres with persistency - TUD
+- Run postgres service (node1-master) 
 ```
 eval $(docker-machine env node1)
-docker service create \
-  --mount src=/home/docker-user/nfs/vol1/postgressql/data,dst=/var/lib/postgresql/data \
+docker -D service create \
+  --mount type=volume,volume-driver=local,src=/home/docker-user/nfs/vol1/pgdata,dst=/var/lib/postgresql/data/pgdata \
+  --env PGDATA=/var/lib/postgresql/data/pgdata \
   --env POSTGRES_DB=postgres \
   --env POSTGRES_USER=postgres \
   --env POSTGRES_PASSWORD=postgres \
   --publish 5432:5432 \
   --name postgres \
   postgres:9.5
+   
 #  --mount type=volume,src=vol1,volume-driver=local,dst=/kkk,volume-opt=type=nfs,volume-opt=device=10.128.0.3:/var/nfs
-
 ```
 
 - Test postgres (node2 or node3)
@@ -85,9 +86,11 @@ docker service rm postgres
   - Check that the created tables are not persisted.
   
 
-
+## Postgres Cluster - TUD
 
 ## Reference
 - https://medined.github.io/docker/postgres/2016/08/20/running-postgres-on-docker-swarm.html
 - http://info.crunchydata.com/blog/easy-postgresql-cluster-recipe-using-docker-1.12
 - https://docs.docker.com/engine/swarm/services/
+- https://docs.docker.com/engine/reference/commandline/service_create/
+- https://github.com/docker-library/postgres/blob/master/9.5/Dockerfile
