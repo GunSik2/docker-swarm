@@ -43,7 +43,7 @@ sudo ls nfs/vol1/foo
 
 ## Structure
 
-![](https://www.google.co.kr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjvl4bO-MXRAhXMnZQKHT32ChsQjRwIBw&url=http%3A%2F%2Francher.com%2Fintroducing-convoy-a-docker-volume-driver-for-backup-and-recovery-of-persistent-data%2F&psig=AFQjCNGhw20uN2kAD7s4shzew-VEU6x_LA&ust=1484630425270520)
+![](http://cdn.rancher.com/wp-content/uploads/2015/08/20005433/howitworks_graphic1.png)
 
 
 ## Reference
